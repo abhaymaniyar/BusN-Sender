@@ -29,7 +29,6 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         //        EditText to enter the Bus number
         Bus currentBus = getItem(position);
         EditText editText = (EditText) busListItemView.findViewById(R.id.busNumber);
-//        editText.setHint(String.valueOf(1 + (int)(30 * Math.random())));
 
         //        Used EraserRegular font for the bus-stop names
         Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(), "fonts/KGSecondChancesSolid.ttf");

@@ -8,9 +8,13 @@ public class Bus {
     private int busNumber;
     private String destinations;
 
+    public Bus(){
+        // Default constructor required for calls to DataSnapshot.getValue(Bus.class)
+    }
+
     public Bus(String destinations, int busNumber) {
-        this.busNumber = busNumber;
         this.destinations = destinations;
+        this.busNumber = busNumber;
     }
 
     public int getBusNumber() {
