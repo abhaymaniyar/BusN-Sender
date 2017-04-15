@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "144528564597",
+    "firebase_url": "https://bus-notification-sender.firebaseio.com",
+    "project_id": "bus-notification-sender",
+    "storage_bucket": "bus-notification-sender.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144528564597:android:51832ddc85941e6b",
+        "android_client_info": {
+          "package_name": "com.example.busnotificationsender"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144528564597-jjch0hca63bi1rlh09vl7v1lu63rq5qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEjDdeQNB-70lIV5_cg62m1f1Uh3p2WG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
