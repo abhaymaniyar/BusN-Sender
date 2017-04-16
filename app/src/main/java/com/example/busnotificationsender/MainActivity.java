@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference bdRef = mDatabase.child("Buses");
                 for (int i = 0; i < buses.size(); i++) {
 //                    int newBusNumber = Integer.valueOf(listView.getChildAt(2).findViewById(R.id.busNumber).getContentDescription().toString());
-                    bdRef.child(buses.get(i).getDestinations()).setValue(busAdapter.getValueFromEditText(i).intValue());
+                    bdRef.child(buses.get(i).getDestinations()).setValue(busAdapter.getValueFromEditText(i));
                 }
                 Toast.makeText(getApplicationContext(), "Notifications Sent", Toast.LENGTH_SHORT).show();
             }

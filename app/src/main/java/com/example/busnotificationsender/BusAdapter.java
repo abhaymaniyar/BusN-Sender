@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,8 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         EditText editText = (EditText) busListItemView.findViewById(R.id.busNumber);
         //be aware that you shouldn't do this for each call on getView, just once by listItem when convertView is null
         editText.addTextChangedListener(new GenericTextWatcher(editText));
-
+        editText.setTag("EditTextAtPos : "+position);
+        Log.d(">>>>Tag > ", editText.getTag().toString());
         //        Used EraserRegular font for the bus-stop names
         Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(), "fonts/KGSecondChancesSolid.ttf");
         editText.setTypeface(typeFace);
@@ -72,7 +74,7 @@ public class BusAdapter extends ArrayAdapter<Bus> {
 //    you can implement a method like this one for each EditText with the list position as parameter :
     public Integer getValueFromEditText(int position){
         //here you need to recreate the id for the editText
-        Integer result = textValues.get("theFirstEditTextAtPos:"+position);
+        Integer result = textValues.get("EditTextAtPos:"+position);
         return result;
     }
 }
