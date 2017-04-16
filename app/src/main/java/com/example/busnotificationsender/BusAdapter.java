@@ -26,21 +26,15 @@ public class BusAdapter extends ArrayAdapter<Bus> {
 
     public View getView(int position, View convertView, ViewGroup parent){
         View busListItemView = convertView;
-        boolean convertViewWasNull = false;
         if(busListItemView == null) {
             busListItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
-            convertViewWasNull = true;
         }
 
         //        EditText to enter the Bus number
         Bus currentBus = getItem(position);
         EditText editText = (EditText) busListItemView.findViewById(R.id.busNumber);
         editText.setText(String.valueOf(currentBus.getBusNumber()));
-        //be aware that you shouldn't do this for each call on getView, just once by listItem when convertView is null
-//        editText.addTextChangedListener(new GenericTextWatcher(editText));
-//        editText.setTag("EditTextAtPos : "+position);
-//        Log.d(">>>>Tag > ", editText.getTag().toString());
-        //        Used EraserRegular font for the bus-stop names
+
         Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(), "fonts/KGSecondChancesSolid.ttf");
         editText.setTypeface(typeFace);
 
@@ -50,29 +44,4 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         destinationsTextView.setTypeface(typeFace);
         return busListItemView;
     }
-
-//    private class GenericTextWatcher implements TextWatcher {
-//
-//        private View view;
-//        private GenericTextWatcher(View view) {
-//            this.view = view;
-//        }
-//
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-//
-//        public void afterTextChanged(Editable editable) {
-//
-//            String text = editable.toString();
-//            //save the value for the given tag :
-//            BusAdapter.this.textValues.put(view.getTag().toString(), Integer.parseInt(editable.toString()));
-//        }
-//    }
-
-////    you can implement a method like this one for each EditText with the list position as parameter :
-//    public Integer getValueFromEditText(int position){
-//        //here you need to recreate the id for the editText
-//        Integer result = textValues.get("EditTextAtPos:"+position);
-//        return result;
-//    }
 }

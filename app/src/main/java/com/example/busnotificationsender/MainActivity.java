@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//    method to get view from the listView
+//    @param position, listView
     public View getViewByPosition(int position, ListView listView) {
         final int firstListItemPosition = listView.getFirstVisiblePosition();
         final int lastListItemPosition = firstListItemPosition + listView.getChildCount() - 1;
