@@ -1,6 +1,8 @@
 package com.example.busnotificationsender;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +18,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-
+    ListView listView;
+    ArrayList<Bus> buses;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listView = (ListView) findViewById(R.id.busListView);
+        loadSavedPreferences();
 
-        final ArrayList<Bus> buses = new ArrayList<Bus>();
+        buses = new ArrayList<Bus>();
         buses.add(new Bus("देव्गुhjhhरदिया इंडस्टृी होउस पलासिया", 0));
         buses.add(new Bus("शालीमार kjkस्कीम खन्डवा नाका", 0));
         buses.add(new Bus("तीन dईमली खजराना बोय्ज होस्टल", 0));
@@ -38,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         final BusAdapter busAdapter = new BusAdapter(this, buses);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
-        final ListView listView = (ListView) findViewById(R.id.busListView);
         listView.setAdapter(busAdapter);
 
 //        sends RealtimeDatabase write operation to Firebase database and shows a toast
@@ -56,7 +60,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    method to get view from the listView
+    private void loadSavedPreferences() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        for (int i = 0; i < listView.getCount(); i++){
+            EditText editText = (EditText) listView.getChildAt(i).findViewById(R.id.busNumber);
+            editText.setText(sharedPreferences.getInt(buses.get(i).getDestinations(), buses.get(i).getBusNumber()));
+        }
+    }
+
+    private void savePreferences(String destinations, int number){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(destinations, number);
+        editor.commit();
+    }
+
+    public void saveData(){
+        for (int i = 0; i < buses.size(); i++){
+            savePreferences(buses.get(i).getDestinations(), buses.get(i).getBusNumber());
+        }
+    }
+
+    @Override
+    public void onBackPressed(){
+        saveData();
+        super.onBackPressed();
+    }
+
+    //    method to get view from the listView
 //    @param position, listView
     public View getViewByPosition(int position, ListView listView) {
         final int firstListItemPosition = listView.getFirstVisiblePosition();
