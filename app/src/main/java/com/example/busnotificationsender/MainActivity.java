@@ -25,21 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.busListView);
+        final SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Buses", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
         loadSavedPreferences();
 
         buses = new ArrayList<Bus>();
-        buses.add(new Bus("देव्गुhjhhरदिया इंडस्टृी होउस पलासिया", 0));
-        buses.add(new Bus("शालीमार kjkस्कीम खन्डवा नाका", 0));
-        buses.add(new Bus("तीन dईमली खजराना बोय्ज होस्टल", 0));
-        buses.add(new Bus("खातीवाला राजkjkवाडा अग्निबाण रानी सती गेट", 0));
-        buses.add(new Bus("देव्गुरदिया इंडस्टृी होउस पलासिया", 0));
-        buses.add(new Bus("शालीddमार स्कीम खन्डवा नाका", 0));
-        buses.add(new Bus("तीन ईमली खजराना बोय्ज होस्टल", 0));
-        buses.add(new Bus("खातीवाला राजवाडा अग्निबाण रानी सती गेट", 0));
-        buses.add(new Bus("देव्गुरदdिया इंडस्टृी होउस पलासिया", 0));
-        buses.add(new Bus("शालीमjkjार स्कीम खन्डवा नाका", 0));
-        buses.add(new Bus("तीनd ईमली खजराना बोय्ज होस्टल", 0));
-        buses.add(new Bus("खातीवdाला राजवाडा अग्निबाण रानी सती गेट", 0));
+        buses.add(new Bus(getResources().getString(R.string.AgnibaanKhajaranaRaniSati), sharedPreferences.getInt("Agnibaan~Khajarana~Rani_Sati", 0)));
+        buses.add(new Bus(getResources().getString(R.string.BhavarkuaV), sharedPreferences.getInt("Bhavarkua-V", 0)));
+        buses.add(new Bus(getResources().getString(R.string.BoysHostelTeenImliKhajarana), sharedPreferences.getInt("Boys_hostel~teen_imli~Khajarana", 0)));
+        buses.add(new Bus(getResources().getString(R.string.DevGuradiyaIndustryHousePalasia), sharedPreferences.getInt("Dev_Guradiya~Industry_House~Palasia", 0)));
+        buses.add(new Bus(getResources().getString(R.string.IndustryHouseRaniSatiAgnibaanKhajrana), sharedPreferences.getInt("Industry_House~Rani_Sati~Agnibaan~Khajrana", 0)));
+        buses.add(new Bus(getResources().getString(R.string.Kalani_Naga), sharedPreferences.getInt("Kalani_Naga", 0)));
+        buses.add(new Bus(getResources().getString(R.string.KhandwaNakaShalimaarScheme54), sharedPreferences.getInt("Khandwa_naka~Shalimaar~Scheme_54", 0)));
+        buses.add(new Bus(getResources().getString(R.string.KhativalaRaniSatiAgnibaanKhajrana), sharedPreferences.getInt("Khativala~Rani_Sati~Agnibaan~Khajrana", 0)));
+        buses.add(new Bus(getResources().getString(R.string.PardesipuraVijaynagar), sharedPreferences.getInt("Pardesipura~Vijaynagar", 0)));
+        buses.add(new Bus(getResources().getString(R.string.RaniSatiAgnibaanKhajranaRaniSati), sharedPreferences.getInt("Rani_Sati~Agnibaan~Khajrana~Rani_sati", 0)));
+        buses.add(new Bus(getResources().getString(R.string.SaiMandirVijayNagar), sharedPreferences.getInt("Sai_Mandir~VijayNagar", 0)));
         final BusAdapter busAdapter = new BusAdapter(this, buses);
 
         // Get a reference to the ListView, and attach the adapter to the listView.

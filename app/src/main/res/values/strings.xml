@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Bus Notification Sender</string>
+    <!--<string name="AgnibaanKhajaranaRaniSati">अग्निबैन</string>-->
+    <!--<string name="BhavarkuaV">भवकुआ</string>-->
+    <!--<string name="BoysHostelTeenImliKhajarana">लड़कों के छात्रावास</string>-->
+    <!--<string name="DevGuradiyaIndustryHousePalasia">देव गुरुदीय</string>-->
+    <!--<string name="IndustryHouseRaniSatiAgnibaanKhajrana">उद्योग हाउस</string>-->
+    <!--<string name="Kalani_Naga">कलानी नगर</string>-->
+    <!--<string name="KhandwaNakaShalimaarScheme54">खण्डवा नाका</string>-->
+    <!--<string name="KhativalaRaniSatiAgnibaanKhajrana">खातिवाला रानी सती</string>-->
+    <!--<string name="PardesipuraVijaynagar">परदेसीपुर विजनगर</string>-->
+    <!--<string name="RaniSatiAgnibaanKhajranaRaniSati">रानी सती अग्नि बान</string>-->
+    <!--<string name="SaiMandirVijayNagar">साईं मंडीर विजयनगर</string>-->
+    <string name="AgnibaanKhajaranaRaniSati">Agnibaan~Khajarana~Rani_Sati</string>
+    <string name="BhavarkuaV">Bhavarkua-V</string>
+    <string name="BoysHostelTeenImliKhajarana">Boys_hostel~teen_imli~Khajarana</string>
+    <string name="DevGuradiyaIndustryHousePalasia">Dev_Guradiya~Industry_House~Palasia</string>
+    <string name="IndustryHouseRaniSatiAgnibaanKhajrana">Industry_House~Rani_Sati~Agnibaan~Khajrana</string>
+    <string name="Kalani_Naga">Kalani_Naga</string>
+    <string name="KhandwaNakaShalimaarScheme54">Khandwa_naka~Shalimaar~Scheme_54</string>
+    <string name="KhativalaRaniSatiAgnibaanKhajrana">Khativala~Rani_Sati~Agnibaan~Khajrana</string>
+    <string name="PardesipuraVijaynagar">Pardesipura~Vijaynagar</string>
+    <string name="RaniSatiAgnibaanKhajranaRaniSati">Rani_Sati~Agnibaan~Khajrana~Rani_sati</string>
+    <string name="SaiMandirVijayNagar">Sai_Mandir~VijayNagar</string>
 </resources>
