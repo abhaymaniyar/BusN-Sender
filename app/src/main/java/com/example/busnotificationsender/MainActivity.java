@@ -4,10 +4,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         // Get a reference to the ListView, and attach the adapter to the listView.
         listView.setAdapter(busAdapter);
 
-//        sends RealtimeDatabase write operation to Firebase database and shows a toast
+
+        //sends RealtimeDatabase write operation to Firebase database and updates the EditTexts and shows a toast
         Button submitButton = (Button) findViewById(R.id.submit_button);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +57,16 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseReference bdRef = mDatabase.child("Buses");
                 for (int i = 0; i < buses.size(); i++) {
                     EditText editText = (EditText) getViewByPosition(i, listView).findViewById(R.id.busNumber);
-                    bdRef.child(buses.get(i).getDestinations()).setValue(Integer.valueOf(editText.getText().toString()));
+                    TextView textView = (TextView) getViewByPosition(i, listView).findViewById(R.id.busDestinations);
+                    Log.d(">>>", "onClick: "+bdRef.child(textView.getText().toString()).getKey().toString());
+                    Log.d(">>>", "onClick: "+buses.get(i).getDestinations());
+                    String busName = bdRef.child(textView.getText().toString()).getKey().toString();
+                    if (busName.equals(buses.get(i).getDestinations())){
+                        Log.d(">>>", "onClick: "+busName.equals(buses.get(i).getDestinations()));
+                        bdRef.child(buses.get(i).getDestinations()).setValue(Integer.valueOf(editText.getText().toString()));
+                        buses.get(i).setBusNumber(Integer.valueOf(editText.getText().toString()));
+                        busAdapter.notifyDataSetChanged();
+                    }
                 }
                 Toast.makeText(getApplicationContext(), "Notifications Sent", Toast.LENGTH_SHORT).show();
             }

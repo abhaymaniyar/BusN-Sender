@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "144528564597",
-    "firebase_url": "https://bus-notification-sender.firebaseio.com",
-    "project_id": "bus-notification-sender",
-    "storage_bucket": "bus-notification-sender.appspot.com"
+    "project_number": "1016439249942",
+    "firebase_url": "https://bus-notifier-826bd.firebaseio.com",
+    "project_id": "bus-notifier-826bd",
+    "storage_bucket": "bus-notifier-826bd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:144528564597:android:51832ddc85941e6b",
+        "mobilesdk_app_id": "1:1016439249942:android:7e3b5f381069daf9",
         "android_client_info": {
           "package_name": "com.example.busnotificationsender"
         }
       },
       "oauth_client": [
         {
-          "client_id": "144528564597-jjch0hca63bi1rlh09vl7v1lu63rq5qg.apps.googleusercontent.com",
+          "client_id": "1016439249942-270d4kcu8mqci6cadpcv6kob73m0k69p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEjDdeQNB-70lIV5_cg62m1f1Uh3p2WG8"
+          "current_key": "AIzaSyCfVx01XOjl_vCOQNeu5Iw2UhOUBJrgPCs"
         }
       ],
       "services": {
